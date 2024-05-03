@@ -7,6 +7,9 @@ const withBundleAnalyzer = bundleAnalyzer({
 export default withBundleAnalyzer({
   reactStrictMode: false,
   output: 'export',
+  images: {
+    unoptimized: true
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
