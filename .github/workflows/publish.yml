@@ -31,6 +31,8 @@ jobs:
 
       - name: Build with Next.js 🏗️
         run: npx next build
+        with:
+          path: out
 
       - name: debug
         run: ls -la
