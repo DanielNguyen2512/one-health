@@ -1,7 +1,7 @@
 import { Flex, Stack, Text } from '@mantine/core';
 import { IconGridDots, IconShare, IconShoppingCart, IconUser } from '@tabler/icons-react';
 import Link from 'next/link';
-import { useParams, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import s from './s.module.scss';
 
 const bottomList = [
