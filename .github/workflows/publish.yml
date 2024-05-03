@@ -20,6 +20,7 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
+        clean: false
 
       - name: Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧
         uses: ./.github/workflows/setup-node
@@ -31,8 +32,6 @@ jobs:
 
       - name: Build with Next.js 🏗️
         run: npx next build
-        with:
-          path: out
 
       - name: debug
         run: ls -la
