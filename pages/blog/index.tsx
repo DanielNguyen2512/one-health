@@ -28,7 +28,7 @@ const sideMenu = [
   },
 ];
 
-const communityData: Topic[] = [
+const communityData: any[] = [
   {
     category: 'Body care',
     type: 'Review',
