@@ -7,15 +7,15 @@ import { BottomBar } from '@/components/layout/bottom-bar';
 const sideMenu = [
 	{
 		title: 'Trending Now',
-		path: '/reservation/trending-now',
+		path: '/community?type=trending-now',
 	},
 	{
 		title: 'Med Spa',
-		path: '/reservation/med-spa',
+		path: '/community?type=med-spa',
 	},
 	{
 		title: 'Mental Care',
-		path: '/reservation/metal-care',
+		path: '/community?type=metal-care',
 	},
 ];
 
