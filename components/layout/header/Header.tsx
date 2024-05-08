@@ -6,33 +6,33 @@ import s from './s.module.scss';
 
 const bottomList = [
   {
-    title: 'Reservation',
+    title: 'One heath',
     link: '/reservation',
     icon: <IconGridDots />,
   },
   {
-    title: 'Shopping',
-    link: '/shopping',
+    title: 'Community',
+    link: '/community',
     icon: <IconShoppingCart />,
   },
   {
-    title: 'Community',
-    link: '/community',
+    title: 'Blog',
+    link: '/blog',
     icon: <IconShare />,
   },
   {
-    title: 'Account',
-    link: '/profile',
+    title: 'About us',
+    link: '/about-us',
     icon: <IconUser />,
   },
 ];
 
-export const BottomBar = () => {
+export const Header = () => {
   const pathname = usePathname();
   return <Flex
-    direction="column"
+    direction={{ base: 'row' }}
     gap={{ base: 'sm', sm: 'lg' }}
-    justify="space-around"
+    justify="end"
     className={s.bottomBar}
   >
     {
@@ -50,15 +50,7 @@ export const BottomBar = () => {
               height: 66,
             }}
             href={item.link}>
-            <Flex
-              style={{ height: 66 }
-              }
-              align="center"
-              justify="center"
-              direction="column">
-              {item.icon}
-              <Text fw={pathname.includes(item.link) ? 700 : undefined}>{item.title}</Text>
-            </Flex>
+            <Text p="sm" fw={pathname.includes(item.link) ? 700 : undefined}>{item.title}</Text>
           </Link>
         </Stack>
       ))

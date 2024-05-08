@@ -1,21 +1,17 @@
-import { AppShell, Space } from '@mantine/core';
-import { BottomBar } from '@/components/layout/bottom-bar/BottomBar';
+import { AppShell } from '@mantine/core';
+import { Header } from './header';
 
 export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => (
   <>
     <AppShell
-      padding="md"
+      padding="xl"
     >
 
       <AppShell.Main>
+        <Header />
 
         {children}
       </AppShell.Main>
-
-      <Space h={66} />
-      <AppShell.Footer>
-        <BottomBar />
-      </AppShell.Footer>
     </AppShell>
   </>
 );

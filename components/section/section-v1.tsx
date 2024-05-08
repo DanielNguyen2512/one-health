@@ -1,7 +1,5 @@
-import { Space, Title } from '@mantine/core';
-import { Carousel } from '@mantine/carousel';
+import { Grid, Space, Title } from '@mantine/core';
 import '@mantine/carousel/styles.css';
-import { IconArrowLeft, IconArrowRight } from '@tabler/icons-react';
 import Link from 'next/link';
 
 export interface SectionProps<ItemType extends Record<string, any>> {
@@ -18,21 +16,14 @@ export const Section = <ItemType extends Record<string, any>>({ title, titleUrl,
       {title}
     </Link>
   </Title>
-  <Space h="md" />
-  <Carousel
-    slideSize="50%"
-    slideGap="md"
-    align="start"
-    nextControlIcon={<IconArrowRight style={{ width: 20, height: 20 }} />}
-    previousControlIcon={<IconArrowLeft style={{ width: 20, height: 20 }} />}
-  >
-    {
-      items.map((item, index) => <Carousel.Slide key={index}>
-        {
-          renderItem(item, index)
-        }
-      </Carousel.Slide>)
-    }
 
-  </Carousel>
+  <Space h="md" />
+  <Grid>
+    {
+      items.map((item, index) => <Grid.Col key={index} span={6}>{
+        renderItem(item, index)
+      }</Grid.Col>)
+    }
+  </Grid>
+
 </section>;

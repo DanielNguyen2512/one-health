@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import '@mantine/core/styles.css';
 import '@mantine/dates/styles.css';
 import './global.scss';

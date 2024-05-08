@@ -1,6 +1,23 @@
-import { Box, Button, Group, List, Select, Space, Stack, Textarea, Title } from '@mantine/core';
+import { Button, Grid, Group, List, Select, Space, Stack, Textarea, Title } from '@mantine/core';
+import Link from 'next/link';
 import { Topic, TopicCard } from './_components/topic';
 import { Search } from '@/components/layout/search';
+import { BottomBar } from '@/components/layout/bottom-bar';
+
+const sideMenu = [
+	{
+		title: 'Trending Now',
+		path: '/reservation/trending-now',
+	},
+	{
+		title: 'Med Spa',
+		path: '/reservation/med-spa',
+	},
+	{
+		title: 'Mental Care',
+		path: '/reservation/metal-care',
+	},
+];
 
 const communityData: Topic[] = [
 	{
@@ -59,37 +76,60 @@ const communityData: Topic[] = [
 export default function HomePage() {
 	return (
 		<div>
-			<Box mb="md">
-				<Search />
-			</Box>
-			<List listStyleType="none">
-				{
-					communityData?.map((item, index) => (
-						<List.Item key={index} mb="lg">
-							<TopicCard topic={item} />
-						</List.Item>
-					))
-				}
-			</List>
-			<Space h="md" />
-			<Title order={2} mb="md">Share your thought</Title>
+			<Grid>
+				<Grid.Col span={4}>
+					<Space h={150} />
+					<Group align="start">
+						<BottomBar />
+						<Stack ml="xl">
+							{
+								sideMenu.map(item => <Link key={item.title} href={item.path}>
+									{item.title}
+								</Link>)
+							}
+						</Stack>
+					</Group>
+				</Grid.Col>
+				<Grid.Col span={8}>
+					<Search />
+					<Space h="md" />
+					<Grid>
+						<Grid.Col span={8}>
+							<List listStyleType="none">
+								{
+									communityData?.map((item, index) => (
+										<List.Item key={index} mb="lg">
+											<TopicCard topic={item} />
+										</List.Item>
+									))
+								}
+							</List>
 
-			<Stack>
-				<Group>
-					<Select
-						label="Type"
-						placeholder="Select product type"
-						data={['Review', 'Advice', 'Question']}
-					/>
-					<Select
-						label="Topic"
-						placeholder="Input quantity"
-						data={['Body care', 'Mental care', 'General']}
-					/>
-				</Group>
-				<Textarea label="Content" />
-				<Button bg="dark">Write now</Button>
-			</Stack>
+						</Grid.Col>
+						<Grid.Col span={4}>
+							<Title order={2} mb="md">Share your thought</Title>
+
+							<Stack>
+								<Group>
+									<Select
+										label="Type"
+										placeholder="Select product type"
+										data={['Review', 'Advice', 'Question']}
+									/>
+									<Select
+										label="Topic"
+										placeholder="Input quantity"
+										data={['Body care', 'Mental care', 'General']}
+									/>
+								</Group>
+								<Textarea label="Content" />
+								<Button bg="dark">Write now</Button>
+							</Stack>
+						</Grid.Col>
+					</Grid>
+				</Grid.Col>
+			</Grid>
+
 		</div>
 	);
 }

@@ -69,7 +69,7 @@ const TopicCard: React.FC<TopicProps> = ({ topic }) => {
         <Flex justify="start" align="center" wrap="nowrap">
           <IconDotsVertical color="#9E9E9E" />
           <Group wrap="nowrap" flex={1} bg="#EEEEEE" p="xs" style={{ borderRadius: 10 }}>
-            <Box w={190}>
+            <Box>
               <Text truncate="end">
                 {bestComment.content}
               </Text>
