@@ -4,9 +4,10 @@ export interface ReservationCard {
   title: string;
   thumb_url: string;
   titleOrder?: TitleOrder;
+  isConfirm?: boolean
 }
 
-const ReservationCard: React.FC<ReservationCard> = ({ title, thumb_url, titleOrder = 3 }) => (
+const ReservationCard: React.FC<ReservationCard> = ({ title, thumb_url, titleOrder = 4, isConfirm }) => (
   <Box>
     <Group justify="space-between" mb="sm">
       <Title order={titleOrder}>{title}</Title>
@@ -27,14 +28,20 @@ const ReservationCard: React.FC<ReservationCard> = ({ title, thumb_url, titleOrd
         <Text size="sm">
           4/5 (220)
         </Text>
-        <Text size="sm">
-          #suggested
-        </Text>
-        <Group gap={5}>
-          <Pill radius="sm">9:00 am</Pill>
-          <Pill radius="sm">10:00 am</Pill>
-          <Pill radius="sm">11:00 am</Pill>
-        </Group>
+        {
+          isConfirm ? <Text size="sm">
+            Confirmed
+          </Text> : <>
+            <Text size="sm">
+              #suggested
+            </Text>
+            <Group gap={5}>
+              <Pill radius="sm">9:00 am</Pill>
+              <Pill radius="sm">10:00 am</Pill>
+              <Pill radius="sm">11:00 am</Pill>
+            </Group></>
+        }
+
       </Stack>
     </Group>
   </Box>

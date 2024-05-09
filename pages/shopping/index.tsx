@@ -43,27 +43,27 @@ export default function HomePage() {
             title="Suggestion for you"
             items={[
               {
-                title: 'Shop 1',
+                title: 'Mask Cream',
                 thumb_url: 'https://www.innisfree.com/my/en/resources/upload/product/36499_l.png',
               },
               {
-                title: 'Shop 2',
+                title: 'Mask Cream',
                 thumb_url: 'https://www.innisfree.com/my/en/resources/upload/product/36499_l.png',
               },
               {
-                title: 'Shop 3',
+                title: 'Mask Cream',
                 thumb_url: 'https://www.innisfree.com/my/en/resources/upload/product/36499_l.png',
               },
               {
-                title: 'Shop 4',
+                title: 'Mask Cream',
                 thumb_url: 'https://www.innisfree.com/my/en/resources/upload/product/36499_l.png',
               },
               {
-                title: 'Shop 5',
+                title: 'Mask Cream',
                 thumb_url: 'https://www.innisfree.com/my/en/resources/upload/product/36499_l.png',
               },
               {
-                title: 'Shop 6',
+                title: 'Mask Cream',
                 thumb_url: 'https://www.innisfree.com/my/en/resources/upload/product/36499_l.png',
               },
             ]}

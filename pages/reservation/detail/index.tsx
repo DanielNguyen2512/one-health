@@ -92,7 +92,7 @@ export default function HomePage() {
                 label="Reserve Date"
                 placeholder="Date input"
               />
-              <Button bg="dark">Confirm</Button>
+              <Link href="/order">  <Button bg="dark" w="50%">Confirm</Button></Link>
             </Stack>
           </Grid.Col>
         </Grid>

@@ -19,7 +19,7 @@ export default function HomePage() {
                 <Stack align="center">
                   <Text w={260} ta="center">For partners:
                     Join us to deliver your services and products to more users</Text>
-                  <Button display="inline-block" bg="dark" onClick={() => router.push('/reservation')}>
+                  <Button display="inline-block" bg="dark" onClick={() => router.push('/')}>
                     join waitlist
                   </Button>
                 </Stack>
@@ -28,7 +28,7 @@ export default function HomePage() {
                 <Stack align="center">
                   <Text w={260} ta="center">For users:
                     Join us to lift up your health and wellness to the next level</Text>
-                  <Button display="inline-block" bg="dark" onClick={() => router.push('/reservation')}>
+                  <Button display="inline-block" bg="dark" onClick={() => router.push('/')}>
                     join waitlist
                   </Button>
                 </Stack>

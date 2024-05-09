@@ -1,5 +1,6 @@
-import { Button, Grid, Group, List, Select, Space, Stack, Textarea, Title } from '@mantine/core';
+import { Button, FileInput, Grid, Group, Input, InputWrapper, List, Select, Space, Stack, Textarea, Title } from '@mantine/core';
 import Link from 'next/link';
+import { IconFile, IconImageInPicture } from '@tabler/icons-react';
 import { Topic, TopicCard } from './_components/topic';
 import { Search } from '@/components/layout/search';
 import { BottomBar } from '@/components/layout/bottom-bar';
@@ -110,20 +111,33 @@ export default function HomePage() {
 							<Title order={2} mb="md">Share your thought</Title>
 
 							<Stack>
-								<Group>
-									<Select
-										label="Type"
-										placeholder="Select product type"
-										data={['Review', 'Advice', 'Question']}
-									/>
-									<Select
-										label="Topic"
-										placeholder="Input quantity"
-										data={['Body care', 'Mental care', 'General']}
-									/>
-								</Group>
-								<Textarea label="Content" />
-								<Button bg="dark">Write now</Button>
+								<Grid>
+									<Grid.Col span={6}>
+										<Select
+											label="Type"
+											placeholder="Select Type"
+											data={['Review', 'Advice', 'Question']}
+										/>
+									</Grid.Col>
+									<Grid.Col span={6}>
+										<Select
+											label="Topic"
+											placeholder="Select Topic"
+											data={['Body care', 'Mental care', 'General']}
+										/>
+									</Grid.Col>
+								</Grid>
+								<InputWrapper label="Subject">
+									<Input />
+								</InputWrapper>
+								<Textarea label="Description" rows={4} />
+								<FileInput
+									leftSection={<IconImageInPicture />}
+									label="Attach your Image"
+									placeholder="Your Image"
+									leftSectionPointerEvents="none"
+								/>
+								<Button bg="dark" w="50%">Post now</Button>
 							</Stack>
 						</Grid.Col>
 					</Grid>

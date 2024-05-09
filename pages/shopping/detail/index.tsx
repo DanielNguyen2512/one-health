@@ -93,7 +93,7 @@ export default function HomePage() {
                 label="Quantity"
                 placeholder="Input quantity"
               />
-              <Button bg="dark">Checkout</Button>
+              <Link href="/order"><Button bg="dark" w="50%">Checkout</Button></Link>
             </Stack>
           </Grid.Col>
         </Grid>

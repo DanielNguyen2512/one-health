@@ -8,23 +8,23 @@ const sideMenu = [
   },
   {
     title: 'Health',
-    path: '/blog/health',
+    path: '/blog?type=health',
   },
   {
     title: 'Fitness',
-    path: '/blog/fitness',
+    path: '/blog?type=fitness',
   },
   {
     title: 'Nutrition',
-    path: '/blog/nutrition',
+    path: '/blog?type=nutrition',
   },
   {
     title: 'Appearance',
-    path: '/blog/appearance',
+    path: '/blog?type=appearance',
   },
   {
     title: 'Mental Care',
-    path: '/blog/mental-care',
+    path: '/blog?type=mental-care',
   },
 ];
 

@@ -7,7 +7,7 @@ import s from './s.module.scss';
 const bottomList = [
   {
     title: 'One heath',
-    link: '/reservation',
+    link: '/',
     icon: <IconGridDots />,
   },
   {
@@ -50,7 +50,7 @@ export const Header = () => {
               height: 66,
             }}
             href={item.link}>
-            <Text p="sm" fw={pathname.includes(item.link) ? 700 : undefined}>{item.title}</Text>
+            <Text p="sm" fw={item.link !== '/' && pathname.includes(item.link) ? 700 : undefined}>{item.title}</Text>
           </Link>
         </Stack>
       ))

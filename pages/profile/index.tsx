@@ -1,21 +1,28 @@
-import { Box, Grid, Group, Image, NavLink, Pill, ScrollArea, Space, Stack, Text, Title } from '@mantine/core';
-import { IconChevronRight, IconHelp, IconLockSquare, IconLogout } from '@tabler/icons-react';
+import { Box, Button, Grid, Group, Image, Pill, ScrollArea, Space, Stack, Text, Title } from '@mantine/core';
 import Link from 'next/link';
 import { Search } from '@/components/layout/search';
 import { BottomBar } from '@/components/layout/bottom-bar';
 
 const sideMenu = [
 	{
-		title: 'Trending Now',
-		path: '/profile?type=trending-now',
+		title: 'Post',
+		path: '/blog',
 	},
 	{
-		title: 'Med Spa',
-		path: '/profile?type=med-spa',
+		title: 'Booking / orders',
+		path: '/order',
 	},
 	{
-		title: 'Mental Care',
-		path: '/profile?type=metal-care',
+		title: 'Payment',
+		path: '/profile',
+	},
+	{
+		title: 'FAQ',
+		path: '/profile',
+	},
+	{
+		title: 'Feedback',
+		path: '/profile',
 	},
 ];
 
@@ -30,7 +37,9 @@ export default function HomePage() {
 						<Stack ml="xl">
 							{
 								sideMenu.map(item => <Link key={item.title} href={item.path}>
-									{item.title}
+									<Text mb="xl">
+										{item.title}
+									</Text>
 								</Link>)
 							}
 						</Stack>
@@ -85,7 +94,7 @@ export default function HomePage() {
 							>
 								<Group gap="sm" wrap="nowrap">
 									{
-										['Services', 'Products', 'Needs', 'Areas', 'Body'].map(item => <Pill size="md" key={item}>{item}</Pill>)
+										['Services', 'Products', 'Needs', 'Areas', 'Body'].map(item => <Pill size="lg" key={item}>{item}</Pill>)
 									}
 								</Group>
 							</ScrollArea>
@@ -94,36 +103,17 @@ export default function HomePage() {
 						<Grid.Col span={4}>
 							<Title order={2} mb="md">Settings</Title>
 
-							<Stack>
-								<NavLink
-									href="#required-for-focus"
-									label="Privacy"
-									leftSection={<IconLockSquare size="1rem" stroke={1.5} />}
-									rightSection={
-										<IconChevronRight size="0.8rem" stroke={1.5} className="mantine-rotate-rtl" />
-									}
-									active
-								/>
-								<NavLink
-									href="#required-for-focus"
-									label="Support"
-									leftSection={<IconHelp size="1rem" stroke={1.5} />}
-									rightSection={
-										<IconChevronRight size="0.8rem" stroke={1.5} className="mantine-rotate-rtl" />
-									}
-									active
-								/>
-								<NavLink
-									href="#required-for-focus"
-									label="Logout"
-									leftSection={<IconLogout size="1rem" stroke={1.5} />}
-									rightSection={
-										<IconChevronRight size="0.8rem" stroke={1.5} className="mantine-rotate-rtl" />
-									}
-									active
-								/>
-
-							</Stack>
+							<Grid>
+								<Grid.Col span={6}>
+									<Button fullWidth bg="#EEEEEE" style={{ color: 'black' }}>Privacy</Button>
+								</Grid.Col>
+								<Grid.Col span={6}>
+									<Button fullWidth bg="#EEEEEE" style={{ color: 'black' }}>Support</Button>
+								</Grid.Col>
+								<Grid.Col span={6}>
+									<Button fullWidth bg="#EEEEEE" style={{ color: 'black' }}>Log out</Button>
+								</Grid.Col>
+							</Grid>
 						</Grid.Col>
 					</Grid>
 				</Grid.Col>

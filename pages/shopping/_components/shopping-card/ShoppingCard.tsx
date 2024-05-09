@@ -4,9 +4,10 @@ export interface ShoppingCardProps {
   title: string;
   thumb_url: string;
   titleOrder?: TitleOrder;
+  isConfirm?: boolean;
 }
 
-const ShoppingCard: React.FC<ShoppingCardProps> = ({ title, thumb_url, titleOrder = 3 }) => (
+const ShoppingCard: React.FC<ShoppingCardProps> = ({ title, thumb_url, titleOrder = 4, isConfirm }) => (
   <Box>
     <Group justify="space-between" mb="sm">
       <Title order={titleOrder}>{title}</Title>
@@ -22,14 +23,22 @@ const ShoppingCard: React.FC<ShoppingCardProps> = ({ title, thumb_url, titleOrde
       />
       <Stack gap={10}>
         <Text size="sm">
-          Med Spa
+          Body Care
         </Text>
         <Text size="sm">
           4/5 (220)
         </Text>
         <Text size="sm">
-          #suggested
+          $100
         </Text>
+        {
+          isConfirm ? <Text size="sm">
+            Confirmed
+          </Text> : <Text size="sm">
+            #suggested
+          </Text>
+        }
+
       </Stack>
     </Group>
   </Box>
