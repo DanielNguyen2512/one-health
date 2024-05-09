@@ -1,6 +1,6 @@
 import { Button, FileInput, Grid, Group, Input, InputWrapper, List, Select, Space, Stack, Textarea, Title } from '@mantine/core';
 import Link from 'next/link';
-import { IconFile, IconImageInPicture } from '@tabler/icons-react';
+import { IconImageInPicture } from '@tabler/icons-react';
 import { Topic, TopicCard } from './_components/topic';
 import { Search } from '@/components/layout/search';
 import { BottomBar } from '@/components/layout/bottom-bar';
