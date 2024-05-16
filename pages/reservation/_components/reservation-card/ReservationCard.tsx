@@ -1,5 +1,5 @@
 import { Alert, Box, Group, Image, Pill, Stack, Text, Title, TitleOrder } from '@mantine/core';
-import { IconInfoCircleFilled } from '@tabler/icons-react';
+import { IconInfoCircle } from '@tabler/icons-react';
 import Link from 'next/link';
 
 export interface ReservationCard {
@@ -46,7 +46,7 @@ const ReservationCard: React.FC<ReservationCard> = ({ title, thumb_url, titleOrd
               <Pill radius="sm">11:00 am</Pill>
             </Group></>
         }
-        {displayPromos && <Link href="/login"><Alert variant="transparent" color="red" radius="xs" p={0} title="Login to see available promos and exclusive deals" icon={<IconInfoCircleFilled />} /></Link>}
+        {displayPromos && <Link href="/login"><Alert variant="transparent" color="red" radius="xs" p={0} title="Login to see available promos and exclusive deals" icon={<IconInfoCircle />} /></Link>}
       </Stack>
 
     </Group>

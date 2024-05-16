@@ -1,5 +1,5 @@
 import { Alert, Box, Group, Image, Stack, Text, Title, TitleOrder } from '@mantine/core';
-import { IconInfoCircleFilled } from '@tabler/icons-react';
+import { IconInfoCircle } from '@tabler/icons-react';
 import Link from 'next/link';
 
 export interface ShoppingCardProps {
@@ -43,7 +43,7 @@ const ShoppingCard: React.FC<ShoppingCardProps> = ({ title, thumb_url, titleOrde
             #suggested, #available promo & deal
           </Text>
         }
-        {displayPromos && <Link href="/login"><Alert variant="transparent" color="red" radius="xs" p={0} title="Login to see available promos and exclusive deals" icon={<IconInfoCircleFilled />} /></Link>}
+        {displayPromos && <Link href="/login"><Alert variant="transparent" color="red" radius="xs" p={0} title="Login to see available promos and exclusive deals" icon={<IconInfoCircle />} /></Link>}
       </Stack>
     </Group>
   </Box>
