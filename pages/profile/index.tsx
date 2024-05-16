@@ -31,11 +31,11 @@ const sideMenu = [
 
 export default function HomePage() {
 	const { isLoggedIn, userInfo, logout } = useAuthContext();
-	const { push } = useRouter();
+	const { replace } = useRouter();
 
 	useEffect(() => {
 		if (!isLoggedIn) {
-			push('/login');
+			replace('/login');
 		}
 	}, []);
 	if (!isLoggedIn) {
@@ -125,7 +125,14 @@ export default function HomePage() {
 									<Button fullWidth bg="#EEEEEE" style={{ color: 'black' }}>Support</Button>
 								</Grid.Col>
 								<Grid.Col span={6}>
-									<Button onClick={logout} fullWidth bg="#EEEEEE" style={{ color: 'black' }}>Log out</Button>
+									<Button
+										onClick={() => {
+											logout();
+											replace('/');
+										}}
+										fullWidth
+										bg="#EEEEEE"
+										style={{ color: 'black' }}>Log out</Button>
 								</Grid.Col>
 							</Grid>
 						</Grid.Col>
