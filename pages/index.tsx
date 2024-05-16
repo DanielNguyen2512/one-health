@@ -15,9 +15,9 @@ export default function HomePage() {
         <Space h="md" />
         <Group>
           <Button w="95" display="inline-block" bg="#3F51B5" onClick={() => router.push('/reservation')}>
-            Sign Up
+            Visit
           </Button>
-          <Button w="95" display="inline-block" bg="#FF9800" onClick={() => router.push('/reservation')}>
+          <Button w="95" display="inline-block" bg="#FF9800" onClick={() => router.push('/login')}>
             Log in
           </Button>
         </Group>

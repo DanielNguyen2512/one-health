@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Search } from '@/components/layout/search';
 import { ShoppingCard } from '../_components/shopping-card';
 import { BottomBar } from '@/components/layout/bottom-bar';
+import { useAuthContext } from '@/components/_context';
 
 const sideMenu = [
   {
@@ -17,9 +18,22 @@ const sideMenu = [
     title: 'Mental Care',
     path: '/shopping?type=metal-care',
   },
+  {
+    title: 'Dental Care',
+    path: '/shopping?type=dental-care',
+  },
+  {
+    title: 'Women Care',
+    path: '/shopping?type=women-care',
+  },
+  {
+    title: 'Suggested for you',
+    path: '/shopping?type=suggested-for-you',
+  },
 ];
 
 export default function HomePage() {
+  const { isLoggedIn } = useAuthContext();
   return (
     <Grid>
       <Grid.Col span={4}>
@@ -40,7 +54,16 @@ export default function HomePage() {
         <Space h="md" />
         <Grid>
           <Grid.Col span={8}>
-            <ShoppingCard titleOrder={2} title="Product 1" thumb_url="https://www.innisfree.com/my/en/resources/upload/product/36499_l.png" />
+            <ShoppingCard titleOrder={2} displayPromos={!isLoggedIn} title="Product 1" thumb_url="https://www.innisfree.com/my/en/resources/upload/product/36499_l.png" />
+            {
+              isLoggedIn && <><Space h="md" />
+                <Title order={2} mb="md">Promo & Deal</Title>
+                <Group gap="sm" wrap="nowrap">
+                  {
+                    ['Free Trial', '10% for new customer'].map(item => <Pill size="md" key={item}>{item}</Pill>)
+                  }
+                </Group>
+              </>}
             <Space h="md" />
             <Title order={2} mb="md">Help</Title>
             <ScrollArea

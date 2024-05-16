@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ReservationCard } from '../_components/reservation-card';
 import { Reservation } from '../../../components/types';
 import { Search } from '@/components/layout/search';
+import { useAuthContext } from '@/components/_context';
 
 const mock: Reservation[] = [{
   title: 'Parner 1',
@@ -22,6 +23,7 @@ const mock: Reservation[] = [{
 }];
 
 export default function HomePage() {
+  const { isLoggedIn } = useAuthContext();
   return (
     <div>
       <Group mb="md" align="flex-start">
@@ -35,7 +37,7 @@ export default function HomePage() {
       <List listStyleType="none">
         {
           mock.map(item => (
-            <List.Item mb="md" key={item.title}><ReservationCard {...item} /></List.Item>))
+            <List.Item mb="md" key={item.title}><ReservationCard {...item} displayPromos={!isLoggedIn} /></List.Item>))
         }
       </List>
     </div>

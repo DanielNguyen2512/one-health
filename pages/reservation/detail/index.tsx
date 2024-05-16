@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Search } from '@/components/layout/search';
 import { ReservationCard } from '../_components/reservation-card';
 import { BottomBar } from '@/components/layout/bottom-bar';
+import { useAuthContext } from '@/components/_context';
 
 const sideMenu = [
   {
@@ -18,9 +19,23 @@ const sideMenu = [
     title: 'Mental Care',
     path: '/reservation?type=metal-care',
   },
+  {
+    title: 'Dental Care',
+    path: '/reservation?type=dental-care',
+  },
+  {
+    title: 'Women Care',
+    path: '/reservation?type=women-care',
+  },
+  {
+    title: 'Suggested for you',
+    path: '/reservation?type=suggested-for-you',
+  },
 ];
 
 export default function HomePage() {
+  const { isLoggedIn } = useAuthContext();
+
   return (
     <Grid>
       <Grid.Col span={4}>
@@ -41,7 +56,17 @@ export default function HomePage() {
         <Space h="md" />
         <Grid>
           <Grid.Col span={8}>
-            <ReservationCard titleOrder={2} title="Parner 1" thumb_url="https://antdisplay.com/pub/media/magefan_blog/beauty_salon_4_.png" />
+
+            <ReservationCard titleOrder={2} title="Parner 1" thumb_url="https://antdisplay.com/pub/media/magefan_blog/beauty_salon_4_.png" displayPromos={!isLoggedIn} />
+
+            {
+              isLoggedIn && <><Space h="md" /><Title order={2} mb="md">Promo & Deal</Title>
+                <Group gap="sm" wrap="nowrap">
+                  {
+                    ['Free Trial', '10% for new customer'].map(item => <Pill size="md" key={item}>{item}</Pill>)
+                  }
+                </Group></>
+            }
             <Space h="md" />
             <Title order={2} mb="md">Services</Title>
             <ScrollArea

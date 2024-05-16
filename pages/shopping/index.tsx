@@ -17,6 +17,18 @@ const sideMenu = [
     title: 'Mental Care',
     path: '/shopping?type=metal-care',
   },
+  {
+    title: 'Dental Care',
+    path: '/shopping?type=dental-care',
+  },
+  {
+    title: 'Women Care',
+    path: '/shopping?type=women-care',
+  },
+  {
+    title: 'Suggested for you',
+    path: '/shopping?type=suggested-for-you',
+  },
 ];
 
 export default function HomePage() {

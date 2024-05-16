@@ -1,7 +1,10 @@
 import { Box, Button, Grid, Group, Image, Pill, ScrollArea, Space, Stack, Text, Title } from '@mantine/core';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 import { Search } from '@/components/layout/search';
 import { BottomBar } from '@/components/layout/bottom-bar';
+import { useAuthContext } from '../../components/_context';
 
 const sideMenu = [
 	{
@@ -27,6 +30,17 @@ const sideMenu = [
 ];
 
 export default function HomePage() {
+	const { isLoggedIn, userInfo, logout } = useAuthContext();
+	const { push } = useRouter();
+
+	useEffect(() => {
+		if (!isLoggedIn) {
+			push('/login');
+		}
+	}, []);
+	if (!isLoggedIn) {
+		return null;
+	}
 	return (
 		<div>
 			<Grid>
@@ -56,7 +70,7 @@ export default function HomePage() {
 								</Group>
 								<Group wrap="nowrap" align="start">
 									<Image
-										src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
+										src={userInfo.avatarUrl}
 										w={120}
 										h={120}
 										alt="Norway"
@@ -65,7 +79,7 @@ export default function HomePage() {
 									/>
 									<Stack gap={10}>
 										<Text size="sm">
-											User name: hongoverflower
+											User name: {userInfo.displayName}
 										</Text>
 										<Text size="sm">
 											Tag line: “newbie but passionate about self care”
@@ -111,7 +125,7 @@ export default function HomePage() {
 									<Button fullWidth bg="#EEEEEE" style={{ color: 'black' }}>Support</Button>
 								</Grid.Col>
 								<Grid.Col span={6}>
-									<Button fullWidth bg="#EEEEEE" style={{ color: 'black' }}>Log out</Button>
+									<Button onClick={logout} fullWidth bg="#EEEEEE" style={{ color: 'black' }}>Log out</Button>
 								</Grid.Col>
 							</Grid>
 						</Grid.Col>

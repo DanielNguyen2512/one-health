@@ -17,6 +17,18 @@ const sideMenu = [
 		title: 'Mental Care',
 		path: '/reservation?type=metal-care',
 	},
+	{
+		title: 'Dental Care',
+		path: '/reservation?type=dental-care',
+	},
+	{
+		title: 'Women Care',
+		path: '/reservation?type=women-care',
+	},
+	{
+		title: 'Suggested for you',
+		path: '/reservation?type=suggested-for-you',
+	},
 ];
 export default function HomePage() {
 	return (

@@ -2463,6 +2463,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mantine/form@npm:^7.9.1":
+  version: 7.9.1
+  resolution: "@mantine/form@npm:7.9.1"
+  dependencies:
+    fast-deep-equal: "npm:^3.1.3"
+    klona: "npm:^2.0.6"
+  peerDependencies:
+    react: ^18.2.0
+  checksum: 10c0/1ff1a67f227044c37468a3ab6b22e8920254fe734e71720a73c136b6834cacd8af7ec7146b1f4608c74de399daab85d2625bc30c1a5d92f3e05591ef336ebbff
+  languageName: node
+  linkType: hard
+
 "@mantine/hooks@npm:7.8.1":
   version: 7.8.1
   resolution: "@mantine/hooks@npm:7.8.1"
@@ -6707,6 +6719,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"constate@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "constate@npm:3.3.2"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 10c0/60e797fa19d0d358a3fab17bff0a0e5cf33b438c23211be0854f86b80b4fc8620e911094582d6e02195362a9ba201563c5d91bc2631e41567525c305dca06153
+  languageName: node
+  linkType: hard
+
 "content-disposition@npm:0.5.4":
   version: 0.5.4
   resolution: "content-disposition@npm:0.5.4"
@@ -9354,6 +9375,7 @@ __metadata:
     "@mantine/carousel": "npm:^7.8.1"
     "@mantine/core": "npm:7.8.1"
     "@mantine/dates": "npm:^7.8.1"
+    "@mantine/form": "npm:^7.9.1"
     "@mantine/hooks": "npm:7.8.1"
     "@next/bundle-analyzer": "npm:^14.1.3"
     "@next/eslint-plugin-next": "npm:^14.1.3"
@@ -9374,6 +9396,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^7.2.0"
     "@typescript-eslint/parser": "npm:^7.2.0"
     babel-loader: "npm:^9.1.3"
+    constate: "npm:^3.3.2"
     dayjs: "npm:^1.11.11"
     embla-carousel-react: "npm:^8.0.2"
     eslint: "npm:^8.57.0"
@@ -9395,6 +9418,7 @@ __metadata:
     prettier: "npm:^3.2.5"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
+    react-use-cookie: "npm:^1.6.1"
     sass: "npm:^1.76.0"
     storybook: "npm:^8.0.0"
     storybook-dark-mode: "npm:^3.0.3"
@@ -10983,7 +11007,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"klona@npm:^2.0.4":
+"klona@npm:^2.0.4, klona@npm:^2.0.6":
   version: 2.0.6
   resolution: "klona@npm:2.0.6"
   checksum: 10c0/94eed2c6c2ce99f409df9186a96340558897b3e62a85afdc1ee39103954d2ebe1c1c4e9fe2b0952771771fa96d70055ede8b27962a7021406374fdb695fd4d01
@@ -13171,6 +13195,15 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
   checksum: 10c0/33d38a6d96cf584842695b50c341980944ece23a42155bf0bd1958f02396adb185c7720b88678dc677817fe111783059c0ebcdf7761644006892583b10e258ee
+  languageName: node
+  linkType: hard
+
+"react-use-cookie@npm:^1.6.1":
+  version: 1.6.1
+  resolution: "react-use-cookie@npm:1.6.1"
+  peerDependencies:
+    react: ">=16.8"
+  checksum: 10c0/76d2bc2ce2ee55d3c4753402ff183e5eeaed9b3ff2ec7e9f51ce118ce27c5937f541fb60c4aae822c76b463d4dbec1402176034da845a10e112962a594603c10
   languageName: node
   linkType: hard
 
